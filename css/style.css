@@ -1,0 +1,405 @@
+*{           /* взять все элементы и подвести их под один шаблон */
+    box-sizing: border-box; /* правильные значения высоты и ширины элементов с учетом padding; border; margin; */
+    margin: 0; /* m0+TAB сброс значений элементов по умолчанию */
+    padding: 0; /* p0+TAB */
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 1140px;
+    margin: 0 auto; /* (ТОЛЬКО блочные!) Блочный элемент ставим по центру, т к сначала он прибился к лев краю*/
+}
+
+.promo{ /* ширину не прописываем, т к разные экраны */
+    height: 800px;
+    background: url('../img/bg/main_bg.jpg') center center/cover no-repeat;
+    /* Можем прописать все свойства в строку как на сайте внизу https://cssreference.io/backgrounds/ .    
+    ../ - выйти из папки css. По оси х и у - будет располагаться по центру
+    / - необходимо ОБЯЗАТЕЛЬНО поставить, чтобы картинка отобразилась
+    cover - размер картинки, это свойство подстраивает картинку под нужные размеры */
+    padding: 39px 0 61px 0;
+}
+
+.logo .logo_img{ /* Наследование! есть блок у кот класс logo, внт этого блока есть картинка с классом logo_img */
+    display: block;
+    margin: 0 auto; /* - не применится, т к картинка строчно-блочная */
+}
+
+.logo .logo_text{
+    color: #FFFFFF;
+    font-style: normal;
+    font-size: 15px; /* размер шрифта */
+    font-weight: 500; /* жирность */
+    line-height: 24px; /* межстрочный интервал */
+    text-transform: uppercase; /* верхний регистр */
+    text-align: center;
+    margin-top: 14px; /* mt14px сокращение*/
+    /* display: flex;
+    align-items: center; */
+}
+
+
+h1{
+    margin-top: 53px;
+}
+
+
+.title{
+    color: #705a27;
+    font-style: normal;
+    font-size: 41px;
+    font-weight: 900;
+    line-height: 41px;
+    /* display: flex; 
+    align-items: center; */ 
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+h2.title{ /* для заголовка 2го порядка с классом title. Не вложенность поэтому без пробела*/
+    margin-top: 30px;
+}
+
+
+.simple .title_big{
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 80px; /* or 100% */
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 21px;
+    /* display: flex;
+    align-items: center; */
+}
+
+
+.promo .promo_text{
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 28px; /* or 133% */
+    /* display: flex;
+    align-items: center; */
+    text-align: center;
+    margin-top: 22px;
+}
+
+
+.promo .promo_text span{
+    color: #F9BF3B;
+    font-weight: bold;
+}
+
+
+.promo .promo_btn, .bonus .promo_btn{
+    display: block; /* изначально как inline-block */
+    margin: 0 auto; /* по-вертикали 73, по-горизонтали выравнивается по центру */
+    margin-top: 72px;
+    width: 313px;
+    height: 72px;
+    box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.18); /* тень внутрь Ох Оу размытие => вверх по Оу */
+    border: 4px solid rgba(0, 0, 0, 0.23);
+    background: linear-gradient(0deg, #2798B9 0%, #3AB6DA 100%);
+    /* текст внутри кнопки: */
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 24px; /* identical to box height, or 114% */
+    /* display: flex;
+    align-items: center; 
+    text-align: center;*/
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.22);
+
+    cursor: pointer; /* при наведении курсор изменяется со стрелочки на руку*/
+}
+.bonus .promo_btn{
+    margin-top: 51px;
+}
+
+
+.more{
+    margin-top: 70px;
+}
+
+.more .more_text{
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 15px;
+    /* display: flex;
+    align-items: center; */
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.more .more_img{ /* то же что и с лого */
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+
+.waiting{
+    min-height: 607px; /* - по дизайну такая высота, но если потом текста будет больше (контент увеличится) - подстроится и растянется (padding-bottom) в след этому контенту (станет больше вся область серая) */ 
+    left: 0px;
+    top: 0px;
+    background: #EFEFEF;
+    padding: 88px 75px;
+}
+
+.waiting .waiting_header, .finish .finish_header{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    /* display: flex;
+    align-items: center; */
+    text-align: center;
+    text-transform: uppercase;
+    color: #252525;
+}
+.finish .finish_header{
+    color: white;
+}
+
+.waiting .waiting_divider, .finish .finish_divider{
+    width: 220px;
+    height: 7px;
+    background: #F9BF3B;
+    margin: 0 auto;
+    margin-top: 18px;
+}
+
+.waiting .waiting_subheader{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 20px;/* identical to box height, or 87% */
+    /* display: flex;
+    align-items: center; */
+    text-align: center;
+    color: #4A4A4A;
+    margin-top: 18px;
+}
+
+
+.waiting .waiting_wrapper{
+    /* применение FLEX-BOX: */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.waiting .waiting_wrapper .waiting_item{
+    /* display: inline-block; расположить друг за другом в линию */ 
+/*     vertical-align: top; выровнять по верхней границе 
+убираем это все при использовании flexbox
+    margin: 25 0; */
+    width: 342px;
+    text-align: center;
+}
+.waiting .waiting_wrapper .waiting_item .waiting_img{
+    width: 100%; /* при замене картинки на какую другую - ширина подстроится под ширину родителя */
+}
+
+.waiting .waiting_wrapper .waiting_item .waiting_descr{
+    margin-top: 26px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 21px;
+    /* text-align: center; - не надо, т к выше уже прописали*/
+    color: #4A4A4A;
+}
+
+
+/* FLEX-BOX: 
+.my-flex-container{
+    display: flex; - применение flexbox
+    flex-wrap: wrap;  - эл-ты переносятся на след строку если не хватает места
+       justify-content: center; выровн. по центру (прижатые друг к другу)
+       justify-content: space-between; распределение по всей ширине родительского блока (от края до края окна)
+    justify-content: space-around; /*равномерно распределились по ГЛАВНОЙ ОСИ (row)
+    align-items: center; -  по вертикали выровнялись по центру (ПОПЕРЕЧНОЙ ОСИ - вертикальная ось)
+        почти никогда не используется - flex-direction: column; главная ось расположена вертикально (не по-умолчанию)
+    height: 450px;;
+}
+
+.my-flex-block{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    text-align: center;
+    color: white;
+}*/
+
+
+.optimization{
+    min-height: 547px;
+    padding: 108px 0 72px 0;
+}
+
+.optimization .optimization_header{
+    margin-left: 389px; /* - расстояния до колонок */
+    font-style: normal;
+    font-weight: 900;
+    font-size: 27px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #299CBD;
+}
+
+.optimization .optimization_text{
+    margin-left: 389px;
+    margin-top: 25px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 27px;
+    color: #4A4A4A;
+}
+
+.optimization .optimization_text span{
+    font-weight: bold;
+}
+
+.optimization .optimization_img{
+    position: absolute;
+    top: -47px;
+    left: -240px;
+    z-index: -1;
+}
+
+
+.finish{
+    min-height: 447px;
+    padding: 86px 0 79px 0;
+    background: url(../img/bg/second_bg.jpg) center center/cover no-repeat;
+}
+
+.finish .finish_wrapper{
+    margin-top: 39px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.finish .finish_wrapper .finish_item{
+    width: 234px;
+}
+
+.finish .finish_wrapper .finish_item .finish_round{
+    /* располагаем иконки по центру:  */
+    display: flex; /* - ведет себя также как блочный элемент, влияет на потомков */
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto; /* - чтобы круги отцентровались тоже */
+    width: 118px;
+    height: 118px;
+    left: 437px;
+    top: 176px;
+    background: #B4E2FF;
+    border-radius: 100%;
+}
+
+.finish .finish_wrapper .finish_item .finish_descr{
+    margin-top: 25px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    color: #EFEFEF;
+}
+
+
+.bonus{
+    min-height: 631px;
+    left: 0px;
+    top: 0px;
+    background: #EFEFEF;
+    padding: 88px 0;
+}
+
+.bonus .gift{
+    display: block;
+    margin: 0 auto  ;
+}
+
+.bonus .bonus_descr{
+    margin-top: 45px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 43px;
+    text-align: center;
+    color: #252525;
+}
+
+.vebinar{
+    min-height: 512px;
+    padding: 81px 0 52px 0;
+}
+
+.vebinar .first_vbn_icon{
+    display: block;
+    margin: 0 auto;
+    /* margin-top: 81px; */
+}
+
+.vebinar .first_vbn{
+    margin-top: 36px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #252525;
+}
+
+.vebinar .date_vbn{
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #299CBD;
+}
+
+.vebinar .limited{
+    margin-top: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 20px;
+    text-align: center;
+    color: #4A4A4A;
+}
+
+.footer{
+    min-height: 169px;
+    left: 0px;
+    top: 0px;
+    background: #1A1A1A;
+    padding: 57px 0 69px 0;
+}
+
+.footer .info{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 21px;
+    text-align: center;
+    color: #888888;
+}
